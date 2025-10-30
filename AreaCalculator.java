@@ -19,8 +19,8 @@ public class AreaCalculator {
     private static float sphere(float radius) {
         return (4/3) * pi * (radius * radius * radius);
     }
-    private static float cube(float sideLength) {
-        return sideLength * sideLength * sideLength;
+    private static float cube(float side) {
+        return side * side * side ;
     }
     private static float cuboid(float length, float breadth, float height) {
         return length * breadth * height;
@@ -29,9 +29,12 @@ public class AreaCalculator {
     public static void main(String s[]) {
         System.out.println("Welcome to the area calculator!");
         while(true) {
-            System.out.println("\nEnter 1 for circle\n" +
-                              "Enter 2 for square\n" +
-                              "Enter 3 for rectangle");
+            System.out.println("\nEnter 1 for circle area\n" +
+            "Enter 2 for square area\n" +
+            "Enter 3 for rectangle area\n" +
+            "Enter 4 for sphere volume\n" +
+            "Enter 5 for cube volume\n" +
+            "Enter 6 for cuboid volume");
             Scanner scanner = new Scanner(System.in);
             int choice = Integer.parseInt(scanner.nextLine());
             if (choice == 1) {
@@ -55,9 +58,9 @@ public class AreaCalculator {
                 System.out.println("Here is the volume of sphere of radius "+ radius + "is " + sphere(radius));
             }
              else if (choice == 5) {
-                System.out.println("Enter the side length of the cube");
-                float sideLength = Float.parseFloat(scanner.nextLine());
-                System.out.println("Here is the volume of cube of side length "+ sideLength + "is " + cubeVolume(sideLength));
+                System.out.println("Enter the side of the cube");
+                float side= Float.parseFloat(scanner.nextLine());
+                System.out.println("Here is the volume of cube of side  "+ side + "is " + cube(side));
             } else if (choice == 6) {
                 System.out.println("Enter the length of the cuboid");
                 float length = Float.parseFloat(scanner.nextLine());
@@ -65,23 +68,9 @@ public class AreaCalculator {
                 float breadth = Float.parseFloat(scanner.nextLine());
                 System.out.println("Enter the height of the cuboid");
                 float height = Float.parseFloat(scanner.nextLine());
-                System.out.println("Here is the volume of cuboid of length "+ length + ", breadth "+breadth+ ", and height "+height+ " is " + cuboidVolume(length,breadth,height));
+                System.out.println("Here is the volume of cuboid of length "+ length + ", breadth "+breadth+ ", and height "+height+ " is " + cuboid(length,breadth,height));
 
-             } else if (choice == 5) {
-                System.out.println("Enter the side length of the cube");
-                float sideLength = Float.parseFloat(scanner.nextLine());
-                System.out.println("Here is the volume of cube of side length "+ sideLength + "is " + cube(sideLength));
-          
-            } else if (choice == 6) {
-                System.out.println("Enter the length of the cuboid");
-                float length = Float.parseFloat(scanner.nextLine());
-                System.out.println("Enter the breadth of the cuboid");
-                float breadth = Float.parseFloat(scanner.nextLine());
-                System.out.println("Enter the height of the cuboid");
-                float height = Float.parseFloat(scanner.nextLine());
-                System.out.println("Here is the volume of cuboid of length "+ length + ", breadth "+breadth+ ", and height "+height+ " is " + cuboid(length,breadth,height));   
-            
-            
+             
             }else {
                 System.out.println("Invalid choice");
                 break;
